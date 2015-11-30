@@ -1,0 +1,27 @@
+USER=d-podkorytov
+PROJECT=veos
+URL=git@github.com:$USER/$PROJECT.git
+COMMIT=`date `
+
+echo Commit=$COMMIT URL=$URL
+git init
+git remote add origin $URL
+git commit -am "first commit"
+git pull origin master
+git push origin master
+
+#exit
+
+#for i in README.md Makefile
+#do
+#git add $i
+#done
+
+for i in `ls *`
+do
+git add $i
+done
+
+git commit 
+git push origin master
+
